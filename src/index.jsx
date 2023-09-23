@@ -5,6 +5,7 @@ import { StrictMode } from 'react'
 import { Perf } from 'r3f-perf'
 import Portfolio from './components/Portfolio'
 import { Leva } from 'leva'
+import { ACESFilmicToneMapping, SRGBColorSpace } from 'three'
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
@@ -19,6 +20,11 @@ root.render(
     <StrictMode>
         <Leva collapsed={false} />
         <Canvas 
+            gl={ { 
+                antialias: true, 
+                toneMapping: ACESFilmicToneMapping, 
+                outputColorSpace: SRGBColorSpace 
+            } }
             camera={ cameraSettings }>
                 <Perf position="top-left" />
                 <Portfolio />
