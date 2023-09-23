@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-ball",
+  "version": "0.0.0",
+  "description": "The portfolio in a goldberg machine",
+  "type": "module",
+  "repository": "git@github.com:mBrossois/portfolio-ball.git",
+  "author": "mBrossois",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^8.14.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.156.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.4",
+    "vite": "^4.4.9"
+  }
+}
