@@ -1,8 +1,11 @@
 import './style.css'
 import ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
-import Ball from './components/ball'
-import Lights from './components/Ligts'
+import { StrictMode } from 'react'
+import { Perf } from 'r3f-perf'
+import Portfolio from './components/Portfolio'
+import { Leva } from 'leva'
+import { ACESFilmicToneMapping, SRGBColorSpace } from 'three'
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
@@ -14,9 +17,17 @@ const cameraSettings = {
 }
 
 root.render(
-    <Canvas 
-        camera={ cameraSettings }>
-        <Lights />
-        <Ball />
-    </Canvas>
+    <StrictMode>
+        <Leva collapsed={false} />
+        <Canvas 
+            gl={ { 
+                antialias: true, 
+                toneMapping: ACESFilmicToneMapping, 
+                outputColorSpace: SRGBColorSpace 
+            } }
+            camera={ cameraSettings }>
+                <Perf position="top-left" />
+                <Portfolio />
+        </Canvas>
+    </StrictMode>
 )
